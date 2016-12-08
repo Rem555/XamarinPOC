@@ -12,6 +12,7 @@ namespace XamarinPOC
 
             var masterDetailNav = new FreshMasterDetailNavigationContainer();
             masterDetailNav.Init("Menu", "Menu.png");
+            masterDetailNav.AddPage<ActionListPageModel>("Actions", null);
             masterDetailNav.AddPage<ContactListPageModel>("Contacts", null);
             masterDetailNav.AddPage<QuoteListPageModel>("Quotes", null);
             MainPage = masterDetailNav;

@@ -39,12 +39,16 @@
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Quote.cs" />
+    <Compile Include="PageModels\ActionListPageModel.cs" />
     <Compile Include="PageModels\ContactListPageModel.cs" />
     <Compile Include="PageModels\ContactPageModel.cs" />
     <Compile Include="PageModels\MainMenuPageModel.cs" />
     <Compile Include="PageModels\ModalPageModel.cs" />
     <Compile Include="PageModels\QuoteListPageModel.cs" />
     <Compile Include="PageModels\QuotePageModel.cs" />
+    <Compile Include="Pages\ActionListPage.xaml.cs">
+      <DependentUpon>ActionListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\ContactListPage.xaml.cs">
       <DependentUpon>ContactListPage.xaml</DependentUpon>
@@ -80,6 +84,10 @@
     <Reference Include="PropertyChanged, Version=1.52.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PropertyChanged.Fody.1.52.1\lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.175\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
@@ -123,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\QuotePage.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ActionListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

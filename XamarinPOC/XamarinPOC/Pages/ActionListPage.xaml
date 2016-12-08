@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPOC.ActionListPage"
+             xmlns:local="clr-namespace:XamarinPOC;assembly=XamarinPOC"
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ListView ItemsSource="{Binding Actions}" HasUnevenRows="true">
+    <ListView.Header>
+      <cv:CarouselView x:Name="CarouselActions" ItemsSource="{Binding CarouselActions}" HeightRequest="200">
+        <cv:CarouselView.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+              <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+              <StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+                <Label TextColor="White" Text="{Binding Title}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                <Label TextColor="White" Text="{Binding Description}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+              </StackLayout>
+            </Grid>
+          </DataTemplate>
+        </cv:CarouselView.ItemTemplate>
+      </cv:CarouselView>
+    </ListView.Header>
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <Grid>
+            <Image Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+            <StackLayout Grid.Row="1" BackgroundColor="#80000000">
+              <Label TextColor="White" Text="{Binding Title}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+              <Label TextColor="White" Text="{Binding Description}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+          </Grid>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</local:BasePage>

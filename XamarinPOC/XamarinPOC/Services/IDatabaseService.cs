@@ -12,6 +12,7 @@ namespace XamarinPOC
         List<Quote> GetQuotes ();
 
         void UpdateQuote (Quote quote);
+
+        List<Models.Action> GetActions();
     }
 }
-
