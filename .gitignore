@@ -9,3 +9,6 @@
 /XamarinPOC/XamarinPOC.Droid/obj/Debug
 /XamarinPOC/XamarinPOC.iOS/bin/iPhone/Debug
 /XamarinPOC/XamarinPOC.iOS/obj/iPhone/Debug
+/XamarinPOC/XamarinPOC.iOS/bin/iPhoneSimulator/Debug
+/XamarinPOC/XamarinPOC.iOS/obj/iPhoneSimulator/Debug
+/XamarinPOC/XamarinPOC.iOS/XamarinPOC.iOS.csproj.user
