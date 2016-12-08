@@ -5,9 +5,9 @@
              xmlns:local="clr-namespace:XamarinPOC;assembly=XamarinPOC"
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
   <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-  <ListView ItemsSource="{Binding Actions}" HasUnevenRows="true">
+  <ListView x:Name="Actions" ItemsSource="{Binding Actions}" HasUnevenRows="true" SelectedItem="{Binding SelectedAction}">
     <ListView.Header>
-      <cv:CarouselView x:Name="CarouselActions" ItemsSource="{Binding CarouselActions}" HeightRequest="200">
+      <cv:CarouselView x:Name="CarouselActions" ItemsSource="{Binding CarouselActions}" HeightRequest="200" >
         <cv:CarouselView.ItemTemplate>
           <DataTemplate>
             <Grid>

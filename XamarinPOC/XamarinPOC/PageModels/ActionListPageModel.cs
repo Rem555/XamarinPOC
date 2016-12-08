@@ -33,5 +33,31 @@ namespace XamarinPOC
         {
             base.ViewIsAppearing(sender, e);
         }
+
+        Models.Action _selectedAction;
+
+        public Models.Action SelectedAction
+        {
+            get
+            {
+                return _selectedAction;
+            }
+            set
+            {
+                _selectedAction = value;
+                if (value != null)
+                    ActionSelected.Execute(value);
+            }
+        }
+
+        public Command<Models.Action> ActionSelected
+        {
+            get
+            {
+                return new Command<Models.Action>(async (action) => {
+                    await CoreMethods.PushPageModel<ActionPageModel>(action);
+                });
+            }
+        }
     }
 }
