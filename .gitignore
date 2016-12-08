@@ -3,3 +3,9 @@
 ################################################################################
 
 /packages
+/XamarinPOC/XamarinPOC/bin/Debug
+/XamarinPOC/XamarinPOC/obj/Debug
+/XamarinPOC/XamarinPOC.Droid/bin/Debug
+/XamarinPOC/XamarinPOC.Droid/obj/Debug
+/XamarinPOC/XamarinPOC.iOS/bin/iPhone/Debug
+/XamarinPOC/XamarinPOC.iOS/obj/iPhone/Debug

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using FreshMvvm;
 
 namespace XamarinPOC
 {
@@ -12,19 +8,14 @@ namespace XamarinPOC
         public App()
         {
             // The root page of your application
-            MainPage = new ContentPage
-            {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
+            FreshIOC.Container.Register<IDatabaseService, DatabaseService>();
+
+            var masterDetailNav = new FreshMasterDetailNavigationContainer();
+            masterDetailNav.Init("Menu", "Menu.png");
+            masterDetailNav.AddPage<ContactListPageModel>("Contacts", null);
+            masterDetailNav.AddPage<QuoteListPageModel>("Quotes", null);
+            MainPage = masterDetailNav;
+
         }
 
         protected override void OnStart()
